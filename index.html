@@ -1,0 +1,64 @@
+<!--*
+ * Chinese Study Helper License
+ * Copyright (c) 2024 Aaron GASSIER
+ * 
+ * Permission is hereby granted to view this file, subject to the following conditions:
+ * 
+ * 1. The file must not be modified or altered in any way without the express written permission of the copyright holder.
+ * 2. The file must not be distributed, sublicensed, or sold without the express written permission of the copyright holder.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO 
+ * THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Study Helper</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/index.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Chinese Study Helper</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="hsk.html?hskLevel=hsk1">HSK 1</a></li>
+                <li><a href="hsk.html?hskLevel=hsk2">HSK 2</a></li>
+                <li><a href="hsk.html?hskLevel=hsk3">HSK 3</a></li>
+                <li><a href="hsk.html?hskLevel=hsk4">HSK 4</a></li>
+                <li><a href="hsk.html?hskLevel=hsk5">HSK 5</a></li>
+                <li><a href="hsk.html?hskLevel=hsk6">HSK 6</a></li>
+                <li><a href="practice.html">Practice</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Welcome to the Chinese Study Helper</h2>
+        <p>Select an HSK level to start studying or practice your knowledge.</p>
+        <div>
+            <h3>Statistics</h3>
+            <p>Total Words: <span id="totalWords">0</span></p>
+            <p>Average Mastery: <span id="averageMastery">0.00</span></p>
+            <div>
+                <a href="hsk.html?hskLevel=hsk1"><p>HSK 1 - Words: <span id="hsk1Words">0</span> | Mastery: <span id="hsk1Mastery">0.00%</span></p></a>
+                <a href="hsk.html?hskLevel=hsk2"><p>HSK 2 - Words: <span id="hsk2Words">0</span> | Mastery: <span id="hsk2Mastery">0.00%</span></p></a>
+                <a href="hsk.html?hskLevel=hsk3"><p>HSK 3 - Words: <span id="hsk3Words">0</span> | Mastery: <span id="hsk3Mastery">0.00%</span></p></a>
+                <a href="hsk.html?hskLevel=hsk4"><p>HSK 4 - Words: <span id="hsk4Words">0</span> | Mastery: <span id="hsk4Mastery">0.00%</span></p></a>
+                <a href="hsk.html?hskLevel=hsk5"><p>HSK 5 - Words: <span id="hsk5Words">0</span> | Mastery: <span id="hsk5Mastery">0.00%</span></p></a>
+                <a href="hsk.html?hskLevel=hsk6"><p>HSK 6 - Words: <span id="hsk6Words">0</span> | Mastery: <span id="hsk6Mastery">0.00%</span></p></a>
+            </div>
+        </div>
+        <button id="exportDataButton">Export Local Data</button>
+        <button id="resetDataButton">Reset Local Data</button>
+        <input type="file" id="importFileInput" accept=".json">
+        <button id="importDataButton">Import Data</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 Aaron's Chinese Study Helper</p>
+    </footer>
+</body>
+</html>

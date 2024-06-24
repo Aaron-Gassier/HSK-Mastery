@@ -1,0 +1,90 @@
+<!--*
+ * Chinese Study Helper License
+ * Copyright (c) 2024 Aaron GASSIER
+ * 
+ * Permission is hereby granted to view this file, subject to the following conditions:
+ * 
+ * 1. The file must not be modified or altered in any way without the express written permission of the copyright holder.
+ * 2. The file must not be distributed, sublicensed, or sold without the express written permission of the copyright holder.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO 
+ * THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Page</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/practice.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Practice Your Chinese</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="hsk.html?hskLevel=hsk1">HSK 1</a></li>
+                <li><a href="hsk.html?hskLevel=hsk2">HSK 2</a></li>
+                <li><a href="hsk.html?hskLevel=hsk3">HSK 3</a></li>
+                <li><a href="hsk.html?hskLevel=hsk4">HSK 4</a></li>
+                <li><a href="hsk.html?hskLevel=hsk5">HSK 5</a></li>
+                <li><a href="hsk.html?hskLevel=hsk6">HSK 6</a></li>
+                <li><a href="practice.html">Practice</a></li>
+                <!-- Add more links for other HSK levels -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="filter-container">
+            <div class="filter-section">
+                <h3>Filter practice by HSK Level:</h3>
+                <div class="checkboxes">
+                    <label><input type="checkbox" value="1" onchange="updateFilters()"> HSK 1</label>
+                    <label><input type="checkbox" value="2" onchange="updateFilters()"> HSK 2</label>
+                    <label><input type="checkbox" value="3" onchange="updateFilters()"> HSK 3</label>
+                    <label><input type="checkbox" value="4" onchange="updateFilters()"> HSK 4</label>
+                    <label><input type="checkbox" value="5" onchange="updateFilters()"> HSK 5</label>
+                    <label><input type="checkbox" value="6" onchange="updateFilters()"> HSK 6</label>
+                </div>
+            </div>
+            <div class="filter-section">
+                <h3>Filter practice by Mastery Level:</h3>
+                <div class="checkboxes">
+                    <label><input type="checkbox" value="0" onchange="updateFilters()"> Mastery 0</label>
+                    <label><input type="checkbox" value="1" onchange="updateFilters()"> Mastery 1</label>
+                    <label><input type="checkbox" value="2" onchange="updateFilters()"> Mastery 2</label>
+                    <label><input type="checkbox" value="3" onchange="updateFilters()"> Mastery 3</label>
+                    <label><input type="checkbox" value="4" onchange="updateFilters()"> Mastery 4</label>
+                    <label><input type="checkbox" value="5" onchange="updateFilters()"> Mastery 5</label>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div id="practiceContainer" class="practice-container">
+            <div id="question" class="question"></div>
+            <div id="details" class="details"></div>
+            <div id="options" class="options"></div>
+            <div id="updateMastery" class="update-mastery">
+                <label for="newMastery">Update Mastery Level:</label>
+                <select id="newMastery">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <button onclick="updateWordMastery()">Update</button>
+            </div>
+            <br>
+            <button id="nextQuestionButton" onclick="generateQuestion()">Generate a New Question</button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Aaron's Chinese Study Helper</p>
+    </footer>
+</body>
+</html>

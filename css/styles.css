@@ -1,0 +1,256 @@
+/*
+ * Chinese Study Helper License
+ * Copyright (c) 2024 Aaron GASSIER
+ * 
+ * Permission is hereby granted to view this file, subject to the following conditions:
+ * 
+ * 1. The file must not be modified or altered in any way without the express written permission of the copyright holder.
+ * 2. The file must not be distributed, sublicensed, or sold without the express written permission of the copyright holder.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO 
+ * THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+ */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #E0E0E0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1C1C1C;
+    color: #E0E0E0;
+    padding: 1em;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: #E0E0E0;
+    text-decoration: none;
+}
+
+button {
+    padding: 5px;
+    background-color: #2C2C2C;
+    color: #E0E0E0;
+    border: 1px solid #3A3A3A;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+main {
+    padding: 0.5em;
+}
+
+footer {
+    background-color: #1C1C1C;
+    color: #E0E0E0;
+    text-align: center;
+    padding: 1em;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px; /* Equal spacing in all directions */
+    justify-items: center;
+}
+
+.grid-item {
+    position: relative;
+    padding: 10px;
+    text-align: center;
+    background-color: #2C2C2C;
+    border: 1px solid #3A3A3A;
+    border-radius: 5px;
+    width: 150px;
+    height: 150px;
+    overflow: visible; /* Ensure overflow is visible */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 1;
+}
+
+.grid-item:hover {
+    background-color: #3A3A3A;
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+.grid-item .word {
+    font-size: 3vw;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #80CBC4;
+    transition: font-size 0.3s;
+}
+
+.grid-item:hover .word {
+    font-size: 3.5vw;
+}
+
+.mastery-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.mastery-controls button {
+    background: none;
+    border: none;
+    color: #80CBC4;
+    font-size: 2vw;
+    cursor: pointer;
+    padding: 0 5px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.mastery-controls button:hover {
+    color: #4DB6AC;
+    transform: scale(1.2);
+}
+
+.mastery-controls span {
+    font-size: 2vw;
+    margin: 0 5px;
+    transition: font-size 0.3s;
+}
+
+.grid-item:hover .mastery-controls span {
+    font-size: 2.5vw;
+}
+
+.tooltip {
+    visibility: hidden;
+    width: 250px;
+    background-color: #424242;
+    color: #BDBDBD;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 100; /* Ensure tooltip is above other elements */
+    bottom: 100%; /* Positioned above the grid item */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* Arrow pointing downwards */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #424242 transparent transparent transparent;
+}
+
+.grid-item:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.practice-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.question {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.details {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.option button {
+    background-color: #2C2C2C;
+    color: #E0E0E0;
+    border: 1px solid #3A3A3A;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    height: 100%;
+}
+
+.option button:hover {
+    background-color: #3A3A3A;
+}
+
+.option button:focus {
+    outline: none;
+}
+
+.filter-section {
+    text-align: left;
+}
+
+.filter-section h3 {
+    margin-bottom: 10px;
+}
+
+.checkboxes label {
+    margin-bottom: 5px;
+}
+
+.checkboxes input {
+    margin-right: 0px;
+}
+
+.update-mastery {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.update-mastery label {
+    margin-right: 10px;
+}
+
+.update-mastery select {
+    background-color: #2C2C2C;
+    color: #E0E0E0;
+    border: 1px solid #3A3A3A;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#nextQuestionButton:hover {
+    background-color: #3A3A3A;
+}
