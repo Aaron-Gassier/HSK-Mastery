@@ -119,6 +119,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load initial data
     loadInitialData();
 
+    // Function to set mastery presets
+    window.setMasteryPreset = function(level) {
+        const levels = ['hsk1', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'hsk6'];
+
+        levels.forEach((hskLevel, index) => {
+            let data = JSON.parse(localStorage.getItem(hskLevel)) || [];
+            if (index + 1 < level - 1) {
+                data.forEach(word => word.Mastery = 5);
+            } else if (index + 1 === level - 1) {
+                data.forEach(word => word.Mastery = 4);
+            } else if (index + 1 === level) {
+                data.forEach(word => word.Mastery = 3);
+            }
+            localStorage.setItem(hskLevel, JSON.stringify(data));
+        });
+
+        alert(`Mastery levels set for HSK ${level}.`);
+        displayStatistics();
+    };
+
     function displayStatistics() {
         const hskLevels = Object.keys(hskData);
         let totalWords = 0;

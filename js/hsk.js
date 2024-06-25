@@ -33,6 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('sortOrder').addEventListener('change', () => {
         sortWords(data, wordGrid);
     });
+
+    // Preload the sound effect
+    const audio = new Audio('mp3/ui.mp3');
+    audio.volume = 0.5; // Set volume to 50%
 });
 
 function displayWords(data, wordGrid) {
@@ -57,8 +61,8 @@ function displayWords(data, wordGrid) {
 }
 
 function adjustMastery(word, change) {
-    const params = new URLSearchParams(window.location.search);
-    const hskLevel = params.get('hskLevel') || 'hsk1';
+    const urlParams = new URLSearchParams(window.location.search);
+    const hskLevel = urlParams.get('hskLevel');
     let data = JSON.parse(localStorage.getItem(hskLevel)) || [];
     const wordObj = data.find(item => item.Word === word);
     let newMastery = wordObj.Mastery + change;
@@ -68,6 +72,11 @@ function adjustMastery(word, change) {
         document.getElementById(`mastery-${word}`).textContent = newMastery;
         document.getElementById(`tooltip-mastery-${word}`).textContent = newMastery;
         filterWords(data, document.getElementById('wordGrid'));
+
+        // Play the sound effect
+        const audio = new Audio('mp3/ui.mp3');
+        audio.volume = 0.5; // Set volume to 50%
+        audio.play();
     }
 }
 

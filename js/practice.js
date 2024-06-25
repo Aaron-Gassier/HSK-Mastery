@@ -34,6 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const optionsElement = document.getElementById('options');
     const nextQuestionButton = document.getElementById('nextQuestionButton');
 
+        // Preload the sound effects
+        const rightSound = new Audio('mp3/right.mp3');
+        const wrongSound = new Audio('mp3/wrong.mp3');
+        rightSound.volume = 0.5; // Set volume to 50%
+        wrongSound.volume = 0.5; // Set volume to 50%
+
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
     }
@@ -114,8 +120,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let correctButton;
         if (correctWord === selectedWord) {
             buttonElement.style.backgroundColor = 'green';
+            rightSound.play(); // Play right answer sound
         } else {
             buttonElement.style.backgroundColor = 'red';
+            wrongSound.play(); // Play wrong answer sound
             correctButton = Array.from(optionButtons).find(button => button.innerHTML.includes(currentWord.Pronunciation));
             correctButton.style.backgroundColor = 'green';
         }
