@@ -57,7 +57,18 @@ function displayWords(data, wordGrid) {
             </span>
         `;
         wordGrid.appendChild(gridItem);
+
+        // Set font size based on word length and cell size
+        setFontSize(gridItem, word.Word);
     });
+}
+
+function setFontSize(gridItem, word) {
+    const cellSize = gridItem.clientWidth;
+    const wordLength = word.length;
+    const fontSize = (cellSize) / (wordLength + 1);
+    const wordElement = gridItem.querySelector('.word');
+    wordElement.style.fontSize = `${fontSize}px`;
 }
 
 function adjustMastery(word, change) {

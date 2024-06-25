@@ -98,17 +98,11 @@ footer {
 }
 
 .grid-item .word {
-    font-size: 3vw;
-    max-width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     color: #80CBC4;
     transition: font-size 0.3s;
-}
-
-.grid-item:hover .word {
-    font-size: 3.5vw;
 }
 
 .mastery-controls {
