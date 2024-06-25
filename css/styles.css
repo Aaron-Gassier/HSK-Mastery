@@ -248,3 +248,33 @@ footer {
 #nextQuestionButton:hover {
     background-color: #3A3A3A;
 }
+
+.cookie-consent {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    z-index: 1000;
+    display: none;
+}
+
+.cookie-consent p {
+    margin: 0;
+}
+
+.cookie-consent button {
+    background-color: lightgreen;
+    border: none;
+    padding: 0.5em 1em;
+    margin: 0 0.5em;
+    cursor: pointer;
+    border-radius: 5px;
+    color: #121212;
+}
+
+.cookie-consent button:hover {
+    background-color: lightskyblue;
+}

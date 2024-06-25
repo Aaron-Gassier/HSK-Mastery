@@ -20,14 +20,6 @@
     <link rel="icon" type="image/x-icon" href="png/favicon.png">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/index.js" defer></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3CR8982LGW"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-3CR8982LGW');
-    </script>
 </head>
 <body>
     <header>
@@ -75,6 +67,12 @@
         <button id="resetDataButton">Reset Local Data</button>
         <input type="file" id="importFileInput" accept=".json">
         <button id="importDataButton">Import Data</button>
+        <div id="cookieConsent" class="cookie-consent">
+            <p>This website uses cookies to ensure you get the best experience. 
+                <button id="acceptCookies">Accept</button>
+                <button id="declineCookies">Decline</button>
+            </p>
+        </div>
     </main>
     <footer>
         <p>You can send your suggestions and feedback at: <a href="mailto:someone@example.com">humansquotes.project@gmail.com</a></p>

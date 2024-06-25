@@ -14,6 +14,40 @@
 document.addEventListener('DOMContentLoaded', () => {
     const hskFile = 'json/hsk.json';
     const hskData = {};
+    // Check if the user has already accepted cookies
+    const hasConsented = localStorage.getItem('cookieConsent');
+
+    if (!hasConsented) {
+        document.getElementById('cookieConsent').style.display = 'block';
+    }
+
+    document.getElementById('acceptCookies').addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'true');
+        document.getElementById('cookieConsent').style.display = 'none';
+        loadGoogleAnalytics();
+    });
+
+    document.getElementById('declineCookies').addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'false');
+        document.getElementById('cookieConsent').style.display = 'none';
+    });
+
+    if (hasConsented === 'true') {
+        loadGoogleAnalytics();
+    }
+
+    function loadGoogleAnalytics() {
+        // Google Analytics tracking code
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-3CR8982LGW');
+    
+        const gaScript = document.createElement('script');
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-3CR8982LGW';
+        gaScript.async = true;
+        document.head.appendChild(gaScript);
+    }
 
     // Function to load initial data
     function loadInitialData() {
