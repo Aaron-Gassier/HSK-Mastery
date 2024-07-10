@@ -102,7 +102,6 @@ footer {
     overflow: hidden;
     text-overflow: ellipsis;
     color: #80CBC4;
-    transition: font-size 0.3s;
 }
 
 .mastery-controls {
@@ -119,7 +118,6 @@ footer {
     font-size: 2vw;
     cursor: pointer;
     padding: 0 5px;
-    transition: color 0.3s, transform 0.3s;
 }
 
 .mastery-controls button:hover {

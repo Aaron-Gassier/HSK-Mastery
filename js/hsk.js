@@ -66,7 +66,7 @@ function displayWords(data, wordGrid) {
 function setFontSize(gridItem, word) {
     const cellSize = gridItem.clientWidth;
     const wordLength = word.length;
-    const fontSize = (cellSize) / (wordLength + 1);
+    const fontSize = (cellSize) / (wordLength + 2);
     const wordElement = gridItem.querySelector('.word');
     wordElement.style.fontSize = `${fontSize}px`;
 }
