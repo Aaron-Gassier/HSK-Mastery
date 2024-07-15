@@ -52,6 +52,10 @@ button {
     transition: background-color 0.3s;
 }
 
+a {
+    color:#80CBC4;
+}
+
 main {
     padding: 0.5em;
 }
